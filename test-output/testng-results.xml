@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="31091" started-at="2016-11-03T14:25:29Z" finished-at="2016-11-03T14:26:00Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="31091" started-at="2016-11-03T14:25:29Z" finished-at="2016-11-03T14:26:00Z">
+      <class name="example.NewTestXvfb">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:example.NewTestXvfb@72d818d1]" name="beforeTest" is-config="true" duration-ms="4313" started-at="2016-11-03T19:25:29Z" finished-at="2016-11-03T19:25:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="testEasy()[pri:0, instance:example.NewTestXvfb@72d818d1]" name="testEasy" duration-ms="26765" started-at="2016-11-03T19:25:33Z" finished-at="2016-11-03T19:26:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEasy -->
+      </class> <!-- example.NewTestXvfb -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
