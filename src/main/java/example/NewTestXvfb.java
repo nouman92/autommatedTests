@@ -1,7 +1,10 @@
 package example;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
+
+import com.google.common.collect.ImmutableMap;
+
+//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import java.io.File;
@@ -15,31 +18,41 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+//import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
+//import org.openqa.selenium.phantomjs.PhantomJSDriver;
+//import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+//import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
+//import org.testng.annotations.AfterClass;
+//import org.testng.annotations.AfterTest;
 
 public class NewTestXvfb {
 	WebDriver driver;
 	boolean outOfStock = false;
-
+	private static ChromeDriverService service;
 	@BeforeTest
 	public void beforeTest() {	
 
-		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
-		System.setProperty("firefox.gecko.driver", "geckodriver");
-		// /usr/bin/firefox
-		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
-		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
-		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
-		driver = new FirefoxDriver(firefoxBinary, null);   
+// 		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
+// 		System.setProperty("firefox.gecko.driver", "geckodriver");
+// 		// /usr/bin/firefox
+// 		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
+// 		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
+// 		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
+// 		driver = new FirefoxDriver(firefoxBinary, null);
+		
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
+		service = new ChromeDriverService.Builder()
+		        .usingDriverExecutable(new File("/usr/bin/google-chrome"))
+		        .usingAnyFreePort()
+		        .withEnvironment(ImmutableMap.of("DISPLAY",":99"))
+		        .build();
+		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
