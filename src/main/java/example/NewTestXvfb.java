@@ -29,12 +29,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.annotations.AfterClass;
-//import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterTest;
 
 public class NewTestXvfb {
 	WebDriver driver;
 	boolean outOfStock = false;
 	private static ChromeDriverService service;
+	
+	
 
 	@BeforeTest
 	public void beforeTest() {	
@@ -57,12 +59,18 @@ public class NewTestXvfb {
 		//File file = new File("F:\\Software Download_Ripon\\WebDriver\\chromedriver_win_22_0_1203_0b\\ch‌​romedriver.exe");
 		//v‌​22 System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		//driver = new ChromeDriver();
+		//kldfdkm 
+		//kdnfknd
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
 	}
-
+	@AfterTest
+	public void afterTest(){
+		driver.quit();
+		
+	}
 	@Test				
 	public void testEasy() {
 
@@ -223,6 +231,8 @@ public class NewTestXvfb {
 		//		//driver.quit();
 
 		driver.quit();
+		
 	}
+	
 	
 }
