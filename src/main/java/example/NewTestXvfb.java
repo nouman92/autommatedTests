@@ -39,21 +39,21 @@ public class NewTestXvfb {
 	@BeforeTest
 	public void beforeTest() {	
 
-// 		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
-// 		System.setProperty("firefox.gecko.driver", "geckodriver");
-// 		// /usr/bin/firefox
-// 		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
-// 		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
-// 		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
-// 		driver = new FirefoxDriver(firefoxBinary, null);
+		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
+		System.setProperty("firefox.gecko.driver", "geckodriver");
+		// /usr/bin/firefox
+		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
+		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
+		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
+		driver = new FirefoxDriver(firefoxBinary, null);
 		
-		System.setProperty("webdriver.chrome.driver", "chromedriver");
-		service = new ChromeDriverService.Builder()
-		        .usingDriverExecutable(new File("/usr/bin/google-chrome"))
-		        .usingAnyFreePort()
-		        .withEnvironment(ImmutableMap.of("DISPLAY",":99"))
-		        .build();
-		driver = new ChromeDriver();
+// 		System.setProperty("webdriver.chrome.driver", "chromedriver");
+// 		service = new ChromeDriverService.Builder()
+// 		        .usingDriverExecutable(new File("/usr/bin/google-chrome"))
+// 		        .usingAnyFreePort()
+// 		        .withEnvironment(ImmutableMap.of("DISPLAY",":99"))
+// 		        .build();
+// 		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
