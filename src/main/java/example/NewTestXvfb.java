@@ -182,12 +182,12 @@ public class NewTestXvfb {
 		System.out.println("Phone number is Enterd");
 
 		WebDriverWait waitt9 = new WebDriverWait(driver, 100);
-		waitt9.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+		waitt9.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='bill_form']/div[8]/div[1]")));
 		//.sendKeys("03364054186");
 
 		//driver.findElement(By.xpath("//*[@id='tel2']")).sendKeys("03364054186");
 
-		WebElement ConfirmMobileNumber = driver.findElement(By.id("tel2"));
+		WebElement ConfirmMobileNumber = driver.findElement(By.xpath(".//*[@id='bill_form']/div[8]/div[1]"));
 
 		ConfirmMobileNumber.sendKeys("03364054186");
 		System.out.println("Phone number is confirmed");
